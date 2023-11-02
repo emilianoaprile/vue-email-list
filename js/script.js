@@ -23,12 +23,17 @@ createApp({
                     console.log(this.emailList);
                     console.log(res.data);
                 })
+        },
+        fetchEmails(numeroEmail) {
+            for (let i = 0; i < numeroEmail; i++) {
+                this.fetchEmail();
+            }
         }
 
     },
     created() {
-		this.fetchEmail()
-	},
+        this.fetchEmails(10);
+    },
 }).mount('#app')
 
 
